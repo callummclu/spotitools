@@ -6,7 +6,6 @@ const path = require("path")
 const cookieParser = require('cookie-parser')
 require("dotenv").config({path: __dirname + "/.env"})
 
-
 // start application and configure port
 const app = express()
 const PORT = sanitizePort(process.env.PORT || 3000)
