@@ -1,0 +1,23 @@
+{
+  "name": "spotitools",
+  "version": "1.0.0",
+  "description": "This is a small project to enhance and provide new ways to experience the spotify web platform through tools created using the spotify web API.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently 'cd backend && nodemon index.js' 'cd frontend && npm start' "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/callummclu/spotitools.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/callummclu/spotitools/issues"
+  },
+  "homepage": "https://github.com/callummclu/spotitools#readme",
+  "dependencies": {
+    "concurrently": "^7.2.1",
+    "nodemon": "^2.0.16"
+  }
+}

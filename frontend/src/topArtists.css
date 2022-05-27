@@ -1,0 +1,22 @@
+.artist-card{
+	font-family: helvetica;
+	padding: 30px;
+	width: 50%;
+	height: 75px;
+	box-shadow: 0 0 5px 0 darkgray;
+	display: grid;
+	grid-template-columns: 1fr 2fr ;
+	grid-gap: 20px;
+	justify-content: center;
+	align-items: center;
+	background: white;
+	border-radius: 10px;
+	margin-bottom: 10px;
+}
+
+.artist-card .image{
+	display: inline-block;
+	width: 75px;
+	height: 75px;
+	background-size: cover;
+}
