@@ -17,7 +17,7 @@ function MyPlaylists(props){
 
 	return (
 		<>
-			{playlistList.map(e=><p><a href={`my-playlists/${e.id}`}>{e.name}</a></p>)}
+			{playlistList.map(e=><p key={e.id}><a href={`my-playlists/${e.id}`}>{e.name}</a></p>)}
 		</>
 	)
 }

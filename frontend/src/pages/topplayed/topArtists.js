@@ -3,6 +3,7 @@ import {spotifyFetchGet} from '../../spotifyFetch'
 
 function TopArtists(props){
 	const [topArtists,setTopArtists] = useState({})
+	const [term,setTerm] = useState("short_term")
 	const getTopCategory = (type,limit=50,offset=0,time_range='medium_term') => {
 		spotifyFetchGet(`${window.location.origin}/topPlayed/user/top/${type}?limit=${limit}&offset=${offset}&time_range=${time_range}`)
 		  .then(async res => {
@@ -13,16 +14,22 @@ function TopArtists(props){
 	}
 
 	useEffect(()=>{
-		getTopCategory('artists')
-	},[])
+		getTopCategory('artists',50,0,term)
+	},[term])
 
+	const selectHandler = e => setTerm(e.target.value)
 
 	return (
 		<>
 			<h1>Top Artists</h1>
-			<p><i>preset parameters: time_range=medium_term, offset=0, limit=50</i></p>
+			<label htmlFor="term">time range </label>
+			<select onChange={e=>selectHandler(e)} name="term" id="term">
+				<option value="short_term">4 weeks</option>
+				<option value="medium_term">6 months</option>
+				<option value="long_term">All time</option>
+			</select>
 			<ol>
-				{topArtists.items !== undefined ? topArtists?.items.map(e=><li>{e.name}</li>) : "loading..."}
+				{topArtists.items !== undefined ? topArtists?.items.map(e=><li key={e.id}>{e.name}</li>) : "loading..."}
 			</ol>
 		</>
 	)

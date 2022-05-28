@@ -4,7 +4,9 @@
   "description": "This is a small project to enhance and provide new ways to experience the spotify web platform through tools created using the spotify web API.",
   "main": "index.js",
   "scripts": {
-    "dev": "concurrently 'cd backend && nodemon index.js' 'cd frontend && npm start' "
+    "dev": "concurrently 'cd backend && nodemon index.js' 'cd frontend && npm start' ",
+    "start": "concurrently 'cd backend && npm install && node index.js' 'cd frontend && npm install && npm start' ",
+
   },
   "repository": {
     "type": "git",

@@ -9,7 +9,6 @@ function SinglePlaylist(props){
 		spotifyFetchGet(`${window.location.origin}/fixMyPlaylist/playlists/${id}`)
 			.then(async res=>{
 				let data = res.data
-				console.log(data)
 				setPlaylistData(data)
 			})
 	},[])
@@ -18,7 +17,7 @@ function SinglePlaylist(props){
 			<h1>{playlistData.name}</h1>
 			<hr/>
 			<ol>
-				{playlistData.tracks?.items.map(e=><li>{e.track.name}-{e.track.artists[0].name}</li>)}
+				{playlistData.tracks?.items.map(e=><li key={e.track.id}>{e.track.name}-{e.track.artists[0].name}</li>)}
 			</ol>
 			
 		</>
