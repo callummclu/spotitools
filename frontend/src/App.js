@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import axios from 'axios'
 import './topArtists.css'
+import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import {spotifyFetchGet} from './spotifyFetch'
 
 function App() {
@@ -45,15 +46,41 @@ function App() {
       })
   }
 
+  const FixMyPlaylistRoute = () => {
+    return (
+      <>
+        <Route path="/" element={<>fmp "/"</>} />
+        <Route path="/my-playlists" element={<>fmp "/my-playlists"</>} />
+        <Route path="/my-playlists/:id" element={<>fmp "/my-playlists/:id"</>} />
+      </>
+    )
+  }
+
   return (
-    <>
-      <button onClick={loginFunction}>login</button>
-      <button onClick={e=>getTopCategory("artists",50,0,"short_term")}>Get top 50 artists over past 4 weeks</button>
-      <ol>
-        {topCategory.items !== undefined && topCategory.items.map(e=><p>{e.name}</p>)}
-      </ol>
-    </>
-  );
+    <BrowserRouter>
+  
+        {window.location.hostname.split(".")[0]=="fixmyplaylist" &&
+          <Routes>
+            <Route path="/" element={<>fmp "/"</>} />
+            <Route path="/my-playlists" element={<>fmp "/my-playlists"</>} />
+            <Route path="/my-playlists/:id" element={<>fmp "/my-playlists/:id"</>} />
+          </Routes>
+        }
+        {window.location.hostname.split(".")[0]=="topplayed" &&
+          <Routes>
+            <Route path="/" element={<>tpr "/"</>} />
+            <Route path="/categories" element={<>tpr "/categories"</>} />
+            <Route path="/categories/artists" element={<>tpr "/categories/artists"</>} />
+            <Route path="/categories/tracks" element={<>tpr "/categories/tracks"</>} />
+          </Routes>
+        }
+        {window.location.hostname=="localhost" &&
+          <Routes>
+          <Route path="/" element={<>home "/"</>}/>
+          </Routes>
+        }
+    </BrowserRouter>
+  )
 }
 
 export default App;
