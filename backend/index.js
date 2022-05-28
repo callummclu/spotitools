@@ -32,6 +32,10 @@ app.use('/topPlayed',topPlayedRoute)
 const OAuth = require('./routes/OAuth.js')
 app.use('/OAuth',OAuth)
 
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+})
+
 // listen on given port
 try{
 	app.listen(PORT)
