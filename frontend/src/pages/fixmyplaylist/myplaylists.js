@@ -5,7 +5,7 @@ import {spotifyFetchGet} from '../../spotifyFetch'
 function MyPlaylists(props){
 	const [playlistList,setPlaylistList] = useState([])
 	const getPlaylists = () => {
-		spotifyFetchGet(`${window.location.origin}/fixMyPlaylist/users/playlists`)
+		spotifyFetchGet(`http://spotitools-uk-dev.herokuapp.com/fixMyPlaylist/users/playlists`)
 			.then(async res => {
 			    let data = await res.data
 			    setPlaylistList(data.items)

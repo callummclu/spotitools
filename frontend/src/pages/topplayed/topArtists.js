@@ -5,7 +5,7 @@ function TopArtists(props){
 	const [topArtists,setTopArtists] = useState({})
 	const [term,setTerm] = useState("short_term")
 	const getTopCategory = (type,limit=50,offset=0,time_range='medium_term') => {
-		spotifyFetchGet(`${window.location.origin}/topPlayed/user/top/${type}?limit=${limit}&offset=${offset}&time_range=${time_range}`)
+		spotifyFetchGet(`http://spotitools-uk-dev.herokuapp.com/topPlayed/user/top/${type}?limit=${limit}&offset=${offset}&time_range=${time_range}`)
 		  .then(async res => {
 		    let data = await res.data
 		    setTopArtists(data)

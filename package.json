@@ -5,9 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "concurrently 'cd backend && nodemon index.js' 'cd frontend && npm start' ",
-    "start": "cd backend && npm install && node index.js",
-     "heroku-postbuild": "cd frontend && npm install --only=dev && npm install && npm run build"
-
+    "start": "cd frontend && npm install && npm run start"
   },
   "repository": {
     "type": "git",
