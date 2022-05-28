@@ -1,4 +1,5 @@
 import loginFunction from '../../login'
+import logoutFunction from '../../logout'
 
 const LandingPage = (props) =>{
 
@@ -9,7 +10,7 @@ const LandingPage = (props) =>{
 
 	return (
 		<>
-			{props.loggedIn ? <></> : <button onClick={loginFunction}>sign in</button>}
+			{props.loggedIn ? <button onClick={logoutFunction}>logout</button> : <button onClick={loginFunction}>sign in</button>}
 			<h1>Home</h1>
 			<button onClick={e=>redirectPage("c/fixmyplaylist")}>fix my playlist</button>
 			<button onClick={e=>redirectPage("c/topplayed")}>top played</button>

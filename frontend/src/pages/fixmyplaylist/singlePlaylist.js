@@ -6,7 +6,7 @@ function SinglePlaylist(props){
 	const [playlistData, setPlaylistData] = useState({})
 	let {id} = useParams()
 	useEffect(()=>{
-		spotifyFetchGet(`http://spotitools-uk-dev.herokuapp.com/fixMyPlaylist/playlists/${id}`)
+		spotifyFetchGet(`${process.env.REACT_BACKEND_URL || "http://localhost:3001"}/fixMyPlaylist/playlists/${id}`)
 			.then(async res=>{
 				let data = res.data
 				setPlaylistData(data)

@@ -16,7 +16,7 @@ import TopTracks from './pages/topplayed/topTracks'
 function App() {
   const [loggedIn,setLoggedIn] = useState(true)
   useEffect(()=>{
-    spotifyFetchGet(`http://localhost:3001/OAuth/info`)
+    spotifyFetchGet(`${process.env.REACT_BACKEND_URL || "http://localhost:3001"}/OAuth/info`)
       .then(async res=>{
           setLoggedIn(true)
       })
