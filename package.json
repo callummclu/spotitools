@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "concurrently 'cd backend && nodemon index.js' 'cd frontend && npm start' ",
-    "start": "concurrently 'cd backend && npm install && node index.js' 'cd frontend && npm install && npm start' ",
+    "start": "concurrently 'cd backend && npm install && node index.js' 'cd frontend && npm install && npm start' "
 
   },
   "repository": {
