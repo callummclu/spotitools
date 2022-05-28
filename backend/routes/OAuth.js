@@ -3,6 +3,7 @@ const router = express.Router()
 const axios = require('axios').default
 const querystring = require('querystring')
 const request = require('request')
+const getUser = require('../middleware/getUser')
 
 let client_id = process.env.CLIENT_ID
 let client_secret = process.env.CLIENT_SECRET
@@ -19,6 +20,10 @@ var generateRandomString = function(length) {
 };
 
 var stateKey = 'spotify_auth_state';
+
+router.get('/info',getUser,(req,res)=>{
+  res.status(200).json(req.user)
+})
 
 router.get('/login', function(req, res) {
 

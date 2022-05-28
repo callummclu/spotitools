@@ -1,0 +1,17 @@
+import axios from 'axios'
+
+function spotifyFetchGet(url){
+    return axios.post(url,{
+      data:{"spotify_access_token":localStorage.getItem('spotify_access_token')}      
+    })     
+}
+
+function spotifyFetchPost(url){
+    return axios.post(url,{
+      data:{"spotify_access_token":localStorage.getItem('spotify_access_token')}      
+    })     
+}
+
+
+export {spotifyFetchGet,spotifyFetchPost}
+export default {spotifyFetchGet,spotifyFetchPost}

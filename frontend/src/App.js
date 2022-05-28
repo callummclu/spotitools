@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import axios from 'axios'
 import './topArtists.css'
+import {spotifyFetchGet} from './spotifyFetch'
 
 function App() {
   const [topCategory,setTopCategory] = useState({})
@@ -29,14 +30,21 @@ function App() {
     this data is then stored inside "topCategory" state variable
   */
   const getTopCategory = (type,limit=20,offset=0,time_range='medium_term') => {
-    axios.post(`${window.location.origin}/topPlayed/user/top/${type}?limit=${limit}&offset=${offset}&time_range=${time_range}`,{
-      data:{"spotify_access_token":localStorage.getItem('spotify_access_token')}
-    })
+    spotifyFetchGet(`${window.location.origin}/topPlayed/user/top/${type}?limit=${limit}&offset=${offset}&time_range=${time_range}`)
       .then(async res => {
         let data = await res.data
         setTopCategory(data)
       })
   }
+
+  const getPlaylists = () => {
+    spotifyFetchGet(`${window.location.origin}/fixMyPlaylist/users/playlists`)
+    .then(async res => {
+        let data = await res.data
+        console.log(data)
+      })
+  }
+
   return (
     <>
       <button onClick={loginFunction}>login</button>
