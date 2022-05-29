@@ -16,13 +16,12 @@ function TopTracks(props){
 		getTopCategory('tracks',50,0,term)
 	},[term])
 
-	const selectHandler = e => setTerm(e.target.value)
 
 	return (
 		<>
 			<h1>Top Tracks</h1>
 			<label htmlFor="term">time range </label>
-			<select onChange={e=>selectHandler(e)} name="term" id="term">
+			<select onChange={e=>setTerm(e.target.value)} name="term" id="term">
 				<option value="short_term">4 weeks</option>
 				<option value="medium_term">6 months</option>
 				<option value="long_term">All time</option>
