@@ -1,4 +1,5 @@
 const axios = require('axios').default
+const fetch = require('node-fetch')
 const getQueryString = require("./getQueryString.js")
 const apiLink = `https://api.spotify.com/v1`
 
@@ -28,17 +29,19 @@ function GET(url,req,res){
 */
 
 function POST(url,req,res){
-	axios.post(
+	console.log(req.body.otherData)
+	fetch(
 	`${apiLink}${url}${getQueryString(req.query)}`,{
+		method: 'POST',
         headers: {        
             "Authorization": `Bearer ${req.body.data.spotify_access_token}`,
             "Accept": "application/json",
             "Content-Type": "application/json"
         },
-        data: req.body        
+        body: JSON.stringify(req.body.otherData)
     })
 	.then(async (response) => {
-		let data = await response.data
+		let data = await response.json()
 		res.status(200).json(data)
 	})
 	.catch(err=>{
@@ -49,17 +52,18 @@ function POST(url,req,res){
 }
 
 function PUT(url,req,res){
-	axios.put(
+	fetch(
 	`${apiLink}${url}${getQueryString(req.query)}`,{
+		method:"PUT",
         headers: {        
             "Authorization": `Bearer ${req.body.data.spotify_access_token}`,
             "Accept": "application/json",
             "Content-Type": "application/json"
         },
-        data: req.body        
+        body: JSON.stringify(req.body.otherData)      
     })
 	.then(async (response) => {
-		let data = await response.data
+		let data = await response.json()
 		res.status(200).json(data)
 	})
 	.catch(err=>{

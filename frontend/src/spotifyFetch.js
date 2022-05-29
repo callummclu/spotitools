@@ -6,9 +6,17 @@ function spotifyFetchGet(url){
     })     
 }
 
-function spotifyFetchPost(url){
+function spotifyFetchPost(url,otherData){
     return axios.post(url,{
-      data:{"spotify_access_token":localStorage.getItem('spotify_access_token')}      
+      data:{"spotify_access_token":localStorage.getItem('spotify_access_token')},
+      otherData:otherData
+    })     
+}
+
+function spotifyFetchPut(url,otherData){
+    return axios.put(url,{
+      data:{"spotify_access_token":localStorage.getItem('spotify_access_token')},
+      otherData:otherData
     })     
 }
 

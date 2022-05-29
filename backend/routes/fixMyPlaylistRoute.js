@@ -22,7 +22,7 @@ router.post("/playlists/:playlistid/tracks",(req,res)=>{
 // post body requires 
 	// uri: string (trackId's in a comma seperated list)
 	// position: number (to show where to put the tracks, default as 0)
-router.post("/playlists/:playlistid/tracks",(req,res)=>{
+router.post("/playlists/:playlistid/tracks/add",(req,res)=>{
 	fd.POST(`/playlists/${req.params.playlistid}/tracks`,req,res)
 })
 
