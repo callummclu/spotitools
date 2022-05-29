@@ -22,6 +22,7 @@ var generateRandomString = function(length) {
 var stateKey = 'spotify_auth_state';
 
 router.post('/info',getUser,(req,res)=>{
+  console.log(req.body)
   res.status(200).json(req.user)
 })
 
