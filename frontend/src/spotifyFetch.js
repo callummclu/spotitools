@@ -13,13 +13,5 @@ function spotifyFetchPost(url,otherData){
     })     
 }
 
-function spotifyFetchPut(url,otherData){
-    return axios.put(url,{
-      data:{"spotify_access_token":localStorage.getItem('spotify_access_token')},
-      otherData:otherData
-    })     
-}
-
-
 export {spotifyFetchGet,spotifyFetchPost}
 export default {spotifyFetchGet,spotifyFetchPost}

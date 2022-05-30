@@ -25,7 +25,7 @@ function App() {
   useEffect(()=>{
     const getAccessToken = url => (url.split('#')[1] || "").toString().replace("access_token=","").split('&')[0]
 
-    if(localStorage.getItem('spotify_access_token')==null || localStorage.getItem('spotify_access_token').length<1){
+    if(localStorage.getItem('spotify_access_token')==null || localStorage.getItem('spotify_access_token').length<1 || window.location.href == window.origin){
           localStorage.setItem('spotify_access_token',getAccessToken(window.location.href.toString()))
     }
     spotifyFetchGet(`${process.env.REACT_BACKEND_URL || "http://localhost:3001"}/OAuth/info`)

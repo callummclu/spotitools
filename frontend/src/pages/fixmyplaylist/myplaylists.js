@@ -35,7 +35,7 @@ function MyPlaylists(props){
 						<hr/>
 			<form onSubmit={e=>newPlaylist(e)}>
 				<label htmlFor="name">name</label>
-				<input name="name" type="text"/>
+				<input name="name" type="text" required/>
 				<br/>
 				<label htmlFor="public">public</label>
 				<input name="public" type="checkbox"/>

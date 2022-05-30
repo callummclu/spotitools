@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react'
 import {useParams} from 'react-router-dom'
-import {spotifyFetchGet,spotifyFetchPost,spotifyFetchPut} from '../../spotifyFetch'
+import {spotifyFetchGet,spotifyFetchPost} from '../../spotifyFetch'
 
 function SinglePlaylist(props){
 	const [playlistData, setPlaylistData] = useState({})
