@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react'
 import {spotifyFetchGet,spotifyFetchPost} from '../../spotifyFetch'
 import Nav from '../../components/nav'
 import {CgMusic} from 'react-icons/cg'
+import {TailSpin} from 'react-loading-icons'
 
 function MyPlaylists(props){
 	const [playlistList,setPlaylistList] = useState([])
@@ -65,9 +66,9 @@ function MyPlaylists(props){
 			
 			<div className="container">
 				<h1>Choose a Playlist</h1>
-				<div className="playlistCard-container">
+				{playlistList.length > 0 ? <div className="playlistCard-container">
 					{playlistList.map(e=><PlaylistIcon image={e.images[0]?.url} size={e.tracks.total} link={`my-playlists/${e.id}`} name={e.name} key={e.id}/>)}
-				</div>
+				</div> : <TailSpin style={{marginTop:"150px",marginBottom:"200px"}} height={'4em'} fill={'black'} stroke={'black'} />}
 			</div>
 		</>
 	)

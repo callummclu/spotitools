@@ -1,6 +1,6 @@
 import React, {useState,useEffect} from 'react'
 import {spotifyFetchGet} from '../../spotifyFetch'
-
+import {TailSpin} from 'react-loading-icons'
 import Nav from '../../components/nav'
 
 const TrackCard = (props) => {
@@ -57,7 +57,7 @@ function TopTracks(props){
 				<option value="long_term">All time</option>
 			</select>
 			<div className='track-container'>
-				{topTracks.items !== undefined ? topTracks?.items.map(e=><TrackCard key={e.id} count={topTracks.items.indexOf(e) + 1} content={e}/>) : "loading..."}
+				{topTracks.items !== undefined ? topTracks?.items.map(e=><TrackCard key={e.id} count={topTracks.items.indexOf(e) + 1} content={e}/>) : <TailSpin style={{marginTop:"150px",marginBottom:"200px"}} height={'4em'} fill={'black'} stroke={'black'} />}
 			</div>
 			</div>
 			</div>

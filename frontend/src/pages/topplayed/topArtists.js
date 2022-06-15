@@ -1,6 +1,7 @@
 import React, {useState,useEffect} from 'react'
 import Nav from '../../components/nav'
 import {spotifyFetchGet} from '../../spotifyFetch'
+import {TailSpin} from 'react-loading-icons'
 
 function TopArtists(props){
 	const [topArtists,setTopArtists] = useState({})
@@ -48,7 +49,7 @@ function TopArtists(props){
 			</select>
 			<div className="artists">
 
-				{topArtists.items !== undefined ? topArtists?.items.map(e=><ArtistCard count={topArtists.items.indexOf(e) + 1} content={e} name={e.name} image={e.image} key={e.id}/>) : "loading..."}
+				{topArtists.items !== undefined ? topArtists?.items.map(e=><ArtistCard count={topArtists.items.indexOf(e) + 1} content={e} name={e.name} image={e.image} key={e.id}/>) : <TailSpin style={{marginTop:"150px",marginBottom:"200px"}} height={'4em'} fill={'black'} stroke={'black'} />}
 
 			</div>
 			</div>
