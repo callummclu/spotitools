@@ -1,0 +1,32 @@
+.cmclui-footer{
+	width: 90vw;
+	padding-left: 5vw;
+	padding-right: 5vw;
+	min-height: 50px;
+	background: rgb(60, 60, 60);
+	color: white;
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+
+.cmclui-footer-brand{
+	text-align: center;
+	font-size: 12px;
+}
+
+.cmclui-footer-content{
+	display: flex;
+	flex-wrap: wrap;
+	overflow: hidden;
+	justify-content: center;
+}
+
+.cmclui-footer-content-section p {
+	color: rgba(255, 255, 255, 0.5);
+}
+
+
+.cmclui-footer-content-section{
+	min-width: 300px;
+	padding-left: 25px;
+}

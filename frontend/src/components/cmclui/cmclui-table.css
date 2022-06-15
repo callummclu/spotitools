@@ -1,0 +1,157 @@
+body{    
+  font-family:Trebuchet MS;
+  margin: 0;
+  color: rgb(60,60,60);
+}
+
+.container-parent{
+  font-family:Trebuchet MS;
+  color: rgb(60,60,60);
+  overflow:hidden;
+  border-radius: 5px;
+  display:flex;
+  flex-direction: column;
+  border:0.5px solid rgb(240,240,240);
+  position: relative;
+  max-height: 100%;
+  width: 100%;
+}
+
+.span-container h4{
+  margin: 10px;
+}
+
+.table-controls{
+  display:flex;
+  justify-content:right;
+  align-items:center;
+  gap:10px;
+  padding:10px;
+  position: absolute;
+  bottom: 0;
+  width: calc(100% - 20px);
+}
+
+.table-container{
+  overflow-y:scroll;
+
+  border-top: 0;
+  width:auto;
+  margin-bottom: 50px;
+  height: 100%;
+}
+
+.table-container.disabled{
+  margin-bottom: 0;
+}
+
+.table-container p:first-child{
+  padding-top: 20px;
+}
+
+.span-container span{
+  display: block;
+  overflow-y: auto;
+  word-wrap: break-word;
+  padding-left: 5px;
+}
+
+.span-container.dark:first-child{
+  border-bottom:0.5px solid gray !important;
+}
+
+.table-container .span-container:last-child{
+  border-bottom: none !important
+}
+
+.span-container:last-child{
+  border-bottom: none
+}
+
+.span-container:first-child{
+  border-bottom:0.5px solid darkgray !important;
+}
+
+.span-container{
+  display: flex;
+  justify-content: center;
+  overflow-y: auto;
+  min-width: 500px;
+  border-bottom: 0.5px solid rgba(60,60,60,0.2);
+}
+
+.span-container.dark{
+  border-bottom: 0.5px solid rgba(190,190,190,0.2);
+
+}
+
+.table-container:not(.table-controls *) p{
+  padding-left:10%;
+  margin:0;
+  padding-top:10px;
+  padding-bottom:10px;
+}
+
+.table-container p:last-child:not(.table-controls *){
+  border: none;
+}
+
+.table-container p:hover:not(.table-controls *){
+  background:rgba(0,0,0,0.025)
+}
+
+.table-controls p {
+  padding: 0 !important;
+}
+
+.table-controls button{
+  background: none;
+  border: none;
+  width:30px;
+  height:30px;
+  cursor: pointer;
+  line-height:37.5px;
+}
+
+
+
+.table-controls button:hover{
+  background: rgba(255,255,255,0.6);
+  border-radius: 50%;
+}
+
+.table-controls button:active{
+  transform: scale(0.9)
+}
+
+pre,code{
+  background: rgb(60, 60, 60);
+  padding: 5px;
+  border-radius: 7.5px;
+  color: white;
+  overflow-y: scroll;
+}
+
+pre{
+  padding: 10px;
+}
+
+.table-container hr:last-child{
+  border-width:0px;
+}
+
+h1.title-container{
+  position:sticky;
+  top:0;
+  margin:0;
+  padding:10px;
+  padding-left: 20px;
+
+}
+
+select{
+  height:30px;
+  padding:5px;
+  border-color: rgba(60,60,60,0.3);
+  border-radius: 5px;
+}

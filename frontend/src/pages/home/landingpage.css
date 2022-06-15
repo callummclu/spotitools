@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body{
+  margin:0;
+  font-family: roboto;
+}
+h1,h2,h3,h4,h5{font-weight:400;}
+p{font-weight:200;}
+
+.banner{
+  background: rgba(0,0,0,0.7);
+
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  color:white;
+}
+
+.banner *{
+  line-height:0px;
+}
+
+.container>h1{
+  line-height: 40px;
+  text-align: center;
+}
+
+.container>p{
+  line-height: 20px;
+  text-align: center;
+}
+
+.sub-nav{
+  width:100%;
+  height:auto;
+  display:flex;
+  justify-content: center;
+  gap: 50px;
+  position:sticky;
+  top:0px;
+  background:white;
+}
+
+.sub-nav a{
+  color: black;
+  text-decoration: none;
+  font-weight:300;
+
+}
+.sub-nav a:visited{
+  color: black;
+  text-decoration: none;
+}
+
+.container{
+  margin-top:50px;
+  width:100%;
+  height:auto;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  line-height:10px;
+  min-height: calc(100vh - 477px);
+}
+
+.container.small-nav{
+  min-height: calc(100vh - 299px);
+}
+
+.container .info-card.clickable:hover{
+  cursor: pointer;
+  filter: brightness(0.6);
+}
+
+.container .info-card{
+  background: rgba(100,100,100,0.15);
+  border-radius: 5px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:10px;
+  width:60%;
+  gap:30px;
+}
+
+@media screen and (max-width: 600px){
+  .container .info-card{
+    padding-top: 10px;
+    width: 90%;
+  }
+
+  .container .info-card .image {
+    margin-top: 5px !important;
+  }
+}
+
+.container .info-card .info p
+{
+  line-height:20px;
+}
+
+.container .info-card .info h1{
+  line-height: 30px;
+}
+
+.container .info-card .image{
+  width:100px;
+  height:100px;
+  border-radius:10px;
+  margin-top:10px;
+  margin-bottom:10px;
+}
+
+.container .info-card .info{
+  width: calc(100% - 150px);
+}
+
+.container .info-card .info *{
+  line-height:10px;
+}
+
+.footer{
+  background: rgba(0,0,0,0.7);
+  color:white;
+  display:flex;
+  flex-direction:column;
+  line-height:0px;
+  align-items:center;
+  padding:20px;
+  margin-top:50px;
+}
+
+.footer *{
+  font-size:15px;
+}
+
+.footer *:last-child{
+  font-size:12px;
+}
+
+.nav-background{
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  background: rgba(0,0,0,0.7);
+  width: calc(100% - 40px);
+  height: 75px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-background .links{
+  height: 100%;
+  width: 400px;
+  display: flex;
+  justify-content: space-evenly;
+  line-height: 75px;
+}
+
+.nav-background .links a{
+  text-decoration: none;
+  color: white;
+}
+
+.nav-background .links button{
+  text-decoration: none;
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: white;
+}
+
+.artists-container select{
+  padding: 5px;
+  border-width: 3px;
+  border-radius: 5px;
+  margin: 20px;
+  margin-bottom: 0;
+}
+
+.artists-container{
+  line-height: 20px;
+  width: calc(100% - 100px);
+}
+
+.artists{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+.artist-card{
+  min-width: 250px;
+  margin: 20px;
+  height: 300px;
+  text-align: center;
+  cursor: pointer;
+  padding: 20px;
+  border-radius: 25px;
+}
+
+
+.artist-card:hover{
+  background: rgba(0,0,0,0.05);
+}
+
+.artist-card .image-container{
+  border-radius: 20px;
+  width: 250px;
+  height: 250px;
+  background-size: cover;
+  text-align: left;
+  background-blend-mode: difference;
+}
+
+.track-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.track-image{
+  height: 75px;
+  min-width: 75px;
+  background-size: cover;
+  margin: 7.5px;
+  border-radius: 5px;
+}
+
+.track-card {
+  width: 90%;
+  display: flex;
+  background: rgb(0,0,0,0.1);
+  height: 90px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+
+}
+
+.track-card h3 {
+  line-height: 90px;
+  padding: 0;
+  margin: 0;
+  margin-left: 40px;
+  margin-right: 30px;
+}
+
+.track-card .track-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  width: calc(70% - 50px);
+
+}
+
+.track-card h2{
+  margin: 5px;
+  padding: 0;
+}
+
+.track-card p{
+  margin: 5px;
+  padding: 0;
+}
+
+@media screen and (max-width: 600px){
+  .track-card{
+    width: 100%;
+  }
+
+  .track-card h3 {
+  line-height: 90px;
+  padding: 0;
+  margin: 0;
+  margin-left: 20px;
+  margin-right: 10px;
+}
+
+}
+
+.error-container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 240px);
+}
+
+.error-container *{
+  margin: 0;
+}
+
+.playlistCard-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.playlistCard {
+  margin: 10px;
+  width: 300px;
+  height: 350px;
+  overflow: hidden;
+  border:1px solid transparent;
+  cursor: pointer;
+}
+
+.playlistCard *:first-child{
+  border-radius: 20px;
+}
+
+.playlistCard img{
+  width: 250px;
+  height: 250px;
+  margin-top: 25px;
+}
+
+.playlistCard *{
+    margin-left: 25px;
+}
+
+.playlistCard h3{
+
+}

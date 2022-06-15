@@ -8,12 +8,15 @@ function SinglePlaylist(props){
 	useEffect(()=>{
 		spotifyFetchGet(`${process.env.REACT_BACKEND_URL || "http://localhost:3001"}/fixMyPlaylist/playlists/${id}`)
 			.then(async res=>{
-				let data = res.data
+				let data = await res.data
 				setPlaylistData(data)
+				spotifyFetchPost(`${process.env.REACT_BACKEND_URL || "http://localhost:3001"}/fixMyPlaylist/playlist/reorder/${id}`,
+				(data.tracks.items)?.map(e=>e.track.id))
+					.then(async response => {
+						console.log(response)
+					})
 			})
 	},[])
-
-
 
 	const addSongToPlaylist = (songs=[]) => {
 		spotifyFetchPost(`${process.env.REACT_BACKEND_URL || "http://localhost:3001"}/fixMyPlaylist/playlists/${id}/tracks/add`,

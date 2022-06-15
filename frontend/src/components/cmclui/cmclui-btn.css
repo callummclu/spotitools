@@ -1,0 +1,49 @@
+.cmclui-btn{
+	padding: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	font-size: 16px;
+	border: 2px solid rgb(60,60,60);;
+	border-radius: 25px;
+	margin: 5px;
+}
+
+
+
+.cmclui-btn.small { 
+	height: 25px;
+	line-height: 0;
+	padding: 10px;
+	font-size: 14px;
+}
+
+.cmclui-btn.medium {
+	height: 30px;
+	line-height: 0;
+	padding: 15px;
+	font-size: 16px;
+}
+
+.cmclui-btn:hover{
+	filter: brightness(0.8);
+	cursor: pointer;
+}
+
+.cmclui-btn.tertiary{
+	border: 2px solid transparent !important;
+	background: transparent !important;
+	text-decoration: underline;
+	color: rgb(60,60,60)
+}
+
+.cmclui-btn.secondary{
+	background: transparent !important;
+	border: 2px solid rgb(60,60,60);
+	color: rgb(60,60,60);
+}
+
+.cmclui-btn.primary{
+	border: 2px solid rgb(60,60,60);	
+	background: rgb(60,60,60);
+	color: white;
+}

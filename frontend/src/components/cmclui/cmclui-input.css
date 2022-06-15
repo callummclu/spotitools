@@ -1,0 +1,138 @@
+.cmclui-input-container{
+	position: relative;
+	margin: 10px;
+	width: 200px;
+}
+
+.cmclui-label{
+	position: absolute;
+	background: white;
+	transition-duration: 0.1s;
+	left: 10px;
+	top: -9px;
+	pointer-events: none;
+	max-width: 75%;
+	white-space: nowrap;
+  	overflow: hidden;
+  	text-overflow: ellipsis;
+  	padding-right: 1px;
+  	padding-left: 1px;
+}
+
+.cmclui-input:focus {
+	outline: none;
+
+}
+
+input.cmclui-input:placeholder-shown{
+	padding-top: 5px;
+
+}
+
+
+input.cmclui-input:placeholder-shown + .cmclui-label{
+	opacity: 0.5;
+	top: 4px;	
+	max-width: 100vw;
+
+}
+
+.cmclui-input:focus + .cmclui-label{
+	top: -9px;
+	opacity: 1;
+}
+
+.cmclui-input
+{
+	width: 100%;
+	padding: 5px;
+	transition-duration: 0.1s;
+	padding-left: 7.5px;
+	border-radius: 5px;
+	border: 1px solid black;
+	padding-top: 10px;
+
+}
+
+.cmclui-input[type=number]{
+	
+}
+.cmclui-input[type=radio]{
+	
+}
+
+.cmclui-input[type=checkbox]:placeholder-shown + label{
+	top: 0;
+}
+.cmclui-input[type=checkbox]:focus + .cmclui-label{
+	top: 2px;
+	left: 30px;
+}
+.cmclui-input[type=checkbox] + label{
+	position: absolute;
+	left: 25px;
+	top: 2px;
+	left: 30px;
+}
+
+
+.cmclui-input[type=checkbox] {
+         position: relative;
+	     cursor: pointer;
+    }
+
+   	.cmclui-input[type=checkbox]:hover:before{
+   		outline: 1px solid #1E80EF;
+   	}
+   	.cmclui-input[type=checkbox]:checked:hover:before{
+   		outline: 0px solid #1E80EF;
+   	}
+
+
+    .cmclui-input[type=checkbox]:before {
+         content: "";
+         display: block;
+         position: absolute;
+         width: 20px;
+         height: 20px;
+         border-radius: 5px;
+         top: 0;
+         left: 0;
+         background-color:#e9e9e9;
+}
+.cmclui-input[type=checkbox]:checked:before {
+         content: "";
+         display: block;
+         position: absolute;
+         width: 20px;
+         height: 20px;
+         top: 0;
+         left: 0;
+         background-color:#1E80EF;
+
+}
+    .cmclui-input[type=checkbox]:checked:after {
+         content: "";
+         display: block;
+         width: 5px;
+         height: 10px;
+         border: solid white;
+         border-width: 0 2px 2px 0;
+         -webkit-transform: rotate(45deg);
+         -ms-transform: rotate(45deg);
+         transform: rotate(45deg);
+         position: absolute;
+         top: 2px;
+         left: 6px;
+
+}
+
+
+.cmclui-input[type=date]{
+	padding-top: 5px;
+	font-family: inherit;
+}
+
+.cmclui-input{
+	
+}

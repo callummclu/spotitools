@@ -2,6 +2,7 @@ const express = require("express")
 const router = express.Router()
 const fd = require('../middleware/fetchData')
 const getUser = require('../middleware/getUser')
+const reorder = require('../middleware/reorderplaylist')
 
 router.post("/users/playlists",getUser,(req,res)=>{
 	fd.GET(`/users/${req.user.id}/playlists`,req,res)
@@ -21,6 +22,10 @@ router.post("/playlists/:playlistid/tracks/add",(req,res)=>{
 
 router.post("/users/playlists/new",getUser,(req,res)=>{
 	fd.POST(`/users/${req.user.id}/playlists`,req,res)
+})
+
+router.post("/playlist/reorder/:playlistid",getUser,(req,res)=>{
+	reorder(req,res)
 })
 
 // updates playlist ***THE SITE CAN BE MADE WITHOUT THIS, THIS IS AN EASE OF LIFE FEATURE***

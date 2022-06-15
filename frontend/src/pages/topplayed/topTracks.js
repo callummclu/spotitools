@@ -1,6 +1,32 @@
 import React, {useState,useEffect} from 'react'
 import {spotifyFetchGet} from '../../spotifyFetch'
 
+import Nav from '../../components/nav'
+
+const TrackCard = (props) => {
+	console.log(props.content)
+	/*
+		props.count
+		props.content.name
+		props.content.album.artists[0]
+		props.content.album.name
+		props.content.album.images[1].url
+		props.content.external_urls.spotify
+	*/
+	return (
+		<>
+			<div className="track-card" onClick={_=>window.location.href = props.content.external_urls.spotify}>
+				<h3>{props.count}</h3>
+				<div className="track-image" style={{backgroundImage:`url(${props.content.album.images[1].url})`}}/>
+				<div className="track-info">
+					<h2>{props.content.name}</h2>
+					<p>{props.content.album.artists[0].name}</p>
+				</div>
+			</div>
+		</>
+	)
+}
+
 function TopTracks(props){
 	const [topTracks,setTopTracks] = useState({})
 	const [term,setTerm] = useState("short_term")
@@ -19,16 +45,22 @@ function TopTracks(props){
 
 	return (
 		<>
+			<Nav loggedIn={props.loggedIn}/>
+			<div className="container small-nav">
 			<h1>Top Tracks</h1>
-			<label htmlFor="term">time range </label>
+			<p>Some sub text talking about this page</p>
+
+			<div className="artists-container">
 			<select onChange={e=>setTerm(e.target.value)} name="term" id="term">
 				<option value="short_term">4 weeks</option>
 				<option value="medium_term">6 months</option>
 				<option value="long_term">All time</option>
 			</select>
-			<ol>
-				{topTracks.items !== undefined ? topTracks?.items.map(e=><li key={e.id}>{e.name}-{e.artists[0].name}</li>) : "loading..."}
-			</ol>
+			<div className='track-container'>
+				{topTracks.items !== undefined ? topTracks?.items.map(e=><TrackCard key={e.id} count={topTracks.items.indexOf(e) + 1} content={e}/>) : "loading..."}
+			</div>
+			</div>
+			</div>
 		</>
 	)
 }
